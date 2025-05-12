@@ -1,0 +1,15 @@
+server:
+  port: 8089
+spring:
+  cloud:
+    circuitbreaker:
+      resilience4j:
+        default:
+          automatic-transition-from-open-to-auttomatic-enable: true
+          event-consumer-buffer-size: 10
+          failure-rate-threshold: 20
+          minimum-number-of-calls: 5
+          permitted-number-of-calls-in-half-open-state: 3
+          register-health-indicator: true
+          sliding-window-size: 50
+          wait-duration-in-open-state: 5s
